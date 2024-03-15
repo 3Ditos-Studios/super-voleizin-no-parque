@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden; /* Hide vertical scrollbar initially */
+}
+
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+section {
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+#start-button,
+button[data-players] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  margin: 0 10px;
+}
+
+#start-button:hover,
+button[data-players]:hover {
+  opacity: 0.7;
+}
+
+#page-3 {
+  overflow-y: auto; /* Enable scrollbar for rules page */
+}

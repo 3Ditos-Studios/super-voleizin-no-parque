@@ -1,17 +1,113 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Voleizin no Parque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="page-1" class="active">
+        <h1>Super Voleizin no Parque</h1>
+        <button id="start-button">Start Game</button>
+    </section>
+    <section id="page-2" class="hidden">
+        <h2>Choose Number of Players</h2>
+        <button data-players="2">2 Players</button>
+        <button data-players="4">4 Players</button>
+    </section>
+    <section id="page-3" class="hidden">
+        <h2>Game Rules for 2 Players</h2>
+        <p>
+            Ok… Vamos lá ! Então… O jogo acabou ficando mais complexo do que se imagina… mas vou dar o meu melhor para explicá-lo de forma simples. Uma dica:  O jogo se parece com vôlei mesmo, caso conheça bem as regras do jogo, deve dar uma facilitada.
 
-      <a-box color="#AA0000" position="0 0 -2" scale="0.5 0.5 0.5" ></a-box>
-    </a-scene>
-  </body>
+Objetivo:
+Quem fazer 15 pontos primeiro, ganha !!! (Dica: utilizar um app de placar)
+
+Preparação e Componentes:
+
+Distribuição de Cartas:
+
+Embaralhe as Cartas de Personagens e separe em 2 times aleatoriamente. Se o time vier ruim… supere, só vai descobrir depois mesmo, mais sorte na próxima partida. Cada jogador terá um time que só será desfeito ao final do jogo. Ou depois de um set se resolverem jogar fizerem mais 1 set. Decidam-se.
+
+Para 2 jogadores:
+Cada jogador recebe 6 cartas de personagens do próprio baralho. Apenas ao final de cada ponto, compra-se até ter 6 cartas. Caso acabe as cartas durante um ponto (Ex: Levantamento com 4 atacantes depois de uma Defesa de Ataque), compra-se apenas o tanto de cartas necessárias para continuar. As cartas ao serem usadas, vão para A Boca de Fumo fumar um tabaquinho e apenas voltam ao jogo, quando acabar todas as cartas do time, então, mistura-se tudo novamente e recomeçam as compras.
+
+Para 4 jogadores:
+
+Cada jogador recebe 3 cartas no começo da partida, mantendo 2 times contras. O Saque neste modo podem ser direcionado para uma das duplas. O Levantamento deve ser feito pela outra dupla, e a escolha dos atacantes pela que defendeu o Saque. Caso acabe as cartas de atacantes de uma dupla, a outra deve completar com as posições que restarem. Não vale mostrar escondido cartas, mas se quiser dizer que tem um atacante bom em alguma posição… o adversário também vai ouvir, mas você pode mentir também. Já a dupla adversária, um escolhe para Defesa, e o outro para o Bloqueio.
+
+Posições:
+
+São 6 posições possíveis. Elas são:
+
+Sacador
+
+Defensor/Pipe
+
+Levantador
+
+Ponta,
+
+Meio/Bloqueador,
+
+Oposto,
+
+O Sacador apenas saca! O Defensor pode atacar de Pipe caso o Levantador queira, porém ele estará revelado. O Levantador escolhe as posições que terá um atacante., pode ser qualquer uma das 4 (Ex: Só Meio, ou Ponta e Pipe, ou Ponta, Oposto e Pipe), lembrando que o Meio, caso não ataque, permanecerá como Bloqueio num próximo ponto, e a Pipe será o Defensor. A dupla do jogador escolhe então os atacantes para as posições escolhidas, e por fim o levantador escolhe o Tokens de Ataque disponível.
+
+Tirando o saque, pois caso o time ganhe, o sacador se mantém, toda carta revelada é descartada para Boca de Fumo ao final do ponto, deixando a posição em aberto.
+
+
+
+
+
+Início do Jogo: Saque
+
+Se ele quiser, ele pode tentar Forçar o Saque e receber +1 no seu atributo, porém deve jogar o Token de Saque para ver se acerta ou erra. Se errar, é ponto do outro time.
+O jogador que começar escolhe uma carta para Saque. E o outro para Defesa. Numa contagem de 3, os jogadores revelam as suas cartas e comparam o nível do Saque contra a Defesa. Caso a diferença de pontos seja:
+
+Saque > Defesa = ACE ! Ponto de saque.
+Defesa => Saque = Bom passe, segue o jogo para a fase de levantamento.
+
+Caso tenha sido ACE, a defesa é descartada, porém o saque se repete pelo mesmo sacador, agora com a carta revelada.  Obs: Depois de cada ACE, o sacador fica se achando, que é algo ruim, e recebe  -1 ponto de Saque
+
+
+
+Segunda fase : Levantamento
+
+O jogador que defendeu o saque, vai escolher um levantador e o número de atacantes de acordo com os pontos de Levantamento -1. Caso não tenha cartas suficientes para todas as posições, compra-se até ter cartas suficientes para as posições. Não revelando, viradas de cabeça para baixo.
+
+1 ponto de Levantamento = 0 atacantes pq é ruim e vai errar! Ponto do outro time.
+2 a 5 pontos de Levantamento = 1 a 4 atacantes. Quanto melhor, mais opções ele consegue fazer.
+
+Em seguida, escolher o Token sem revelar para onde vai levantar.
+
+Terceira fase: Bloqueio e Defesa:
+
+O adversário escolherá 1 token para adivinhar onde será levantado e colocará um bloqueador perto da rede e mais um defensor colocado no fundo da quadra.
+
+Os jogadores revelam o que escolheram. O objetivo do bloqueio é acertar o mesmo Token do levantamento.
+
+Quarta fase: Fase do Ataque:
+
+Para cada situação. Uma duelo diferente.
+
+Caso o bloqueio acerte. Será:
+Ataque > Bloqueio. Ponto de Ataque
+Bloqueio >= Ataque. TOCO ! Ponto de Bloqueio.
+
+Caso o bloqueio erre. O Ataque sem bloqueio é top e ganha um boost. Será:
+
+
+Na Disputa de Bloqueios, o time que atacou pode escolher qualquer um atacantes na rede disponíveis, incluindo o que atacou, para disputar o Bloqueio VS Bloqueio. Caso empate, prioridade do time que atacou.
+
+Os jogadores devem revelar ao mesmo tempo as cartas escolhidas para cada disputa. As cartas reveladas são descartadas ao final do ponto quando usadas em disputas ou em levantamentos, a não ser o sacador caso seja ponto do time. Todas as cartas que não foram reveladas permanecem em suas posições.
+
+O jogo termina quem fizer o número de pontos estipulados.
+
+Ex: No, primeiro ponto, Assis usou o sou Machado e mandou um saque forte na Lana, Hari então usou o seu poder e realizou o passe, Assis fica revelado no fundo da quadra, Lana volta para posição de Defesa/Pipe revelada e Hari é descartada. Se a bola voltar, fudeu, pois todos já sabem quem vai defender. mas isso se voltar. Depois da recepção, o Rodrigo com 3 de levantamento escolhe 2 atacantes, Ponta e Oposto, não precisando levantar para Lana. que está na Pipe. Escolhe Ponta, acerta o levantamento sem Bloqueio com o Eric e toma uma defesa do Kuba, o outro time levanta e se acertar o passe, quem defende é a Lana.
+        </p>
+    </section>
+    <script src="script.js"></script>
+</body>
 </html>
